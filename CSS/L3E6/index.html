@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style> 
+ 
+      
+                
+
+                input[type=text] {
+
+                border: 2px solid rgb(182, 7, 7);
+                border-color: rgb(212, 13, 13);
+                border-style: solid;
+                background-position: 1px 1px;
+                
+                border-radius: 5px;
+                width: 50vw;
+                background-color: white;
+                background-image: url('searchicon.png');
+                background-repeat: no-repeat;
+                padding-left: 25px;
+
+                }    
+
+                
+                input[type=number] {
+                
+                border: 2px solid rgb(182, 7, 7);
+                border-color: rgb(212, 13, 13);
+                border-style: solid;
+                background-position: 1px 1px;
+                
+                border-radius: 5px;
+                width: 50vw;
+                background-color: white;
+                background-image: url('searchicon.png');
+                background-repeat: no-repeat;
+                padding-left: 25px;    
+             
+                }
+                
+                input[type=text]:focus {
+                background-color: lightblue;
+            }
+
+                input[type=number]:focus {
+                background-color: lightblue;
+            }
+
+    </style>
+
+    <form action="">
+        <label for="idNum1">Numero</label><br>
+        <input type="number"  id="idNum1"><br>
+        <label for="idSinal">Calculo</label><br>
+        <input type="text"  id="idSinal"><br>
+        <label for="idNum2">Numero</label><br>          
+        <input type="number"  id="idNum2"><br>
+        <label for="idResultado">Resultado</label><br>
+        <input type="text" id="idResultado">
+        <br><br>
+        <input type="button" value="Calcular" onclick="calcular()">
+        
+    </form>
+    <script>
+                   
+        function calcular() {
+
+        let num1 = Number(document.getElementById("idNum1").value)
+        let num2 = Number(document.getElementById("idNum2").value)
+        let sinal = document.getElementById("idSinal").value
+        let resultado = document.getElementById("idResultado")
+
+            switch (sinal) {
+                case "+":
+                    resultado.value = num1 + num2
+                    break;
+
+                case "-":
+                    resultado.value = num1 - num2
+                    break;
+
+                case "*":
+                    resultado.value = num1 * num2
+                    break;
+
+                case "/":
+                    resultado.value = num1 / num2
+                    break;
+                    
+            
+                default:
+                alert("Sinal não reconhecido")
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>

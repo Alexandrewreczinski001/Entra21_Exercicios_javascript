@@ -7,67 +7,168 @@
         <title>Document</title>
     </head>
     <body>
-        
-    	<h1>Conversão de real para outras moedas</h1>
-			
 		
-			
-				<label id="text1">Converter para: </label><br>
-				<select id="opções">
-					<option></option>
-					<option>Dólar Americano</option>
-					<option>Dólar Canadense</option>
-					<option>Euro</option>
-					<option>Libra Esterlina</option>
-										
-				</select><br />
-			
-                <label>Valor a ser convertido:</label><br>	
-				<input type="text" id="text2" />
-                <br><br>
-		
-			    <input type="button" value="Converter" id="btn1" onClick="conversao()" />
-			    <input type="reset" value="Limpar" id="btn2">
-                <br><br>
-		
-				<label id="resultado">Resultado:</label><br />
-				<span id="valorFinal"></span>
-			
-			
-			
-	</form>	
-	
-	<script>	
-		var valor;			
-		
-		
-		function conversao(){
-			var dolarAmericano = 4.73;
-			var dolarCanadense = 3.72;
-			var euro = 5.09;
-			var libra = 5.99;
-			
-			valor = parseFloat(document.getElementById("text2").value);			
-			
-			if(document.getElementById("opções").value="Dólar Americano"){
-				document.getElementById("valorFinal").innerHTML = (valor/dolarAmericano).toFixed(2);			
+		          
+				  <input type="radio" name="nmMoeda1" id="idReal1" step="0.01" checked>
+				  <label for="idReal1">Real</label><br>
+	  
+				  <input type="radio" name="nmMoeda1" id="idDolarA1" step="0.01">
+				  <label for="idDolarA1">Dolar Americano</label><br>
+	  
+				  <input type="radio" name="nmMoeda1" id="idEuro1" step="0.01" >
+				  <label for="idEuro1">Euro</label><br>
+	  
+				  <input type="radio" name="nmMoeda1" id="idLibra1" step="0.01">
+				  <label for="idLibra1">Libra Esterlina</label><br>
+	  
+				  <input type="radio" name="nmMoeda1" id="idDolarC1">
+				  <label for="idDolarC1">Dólar Canadense</label><br>
 				
-			}
-			
-			if(document.getElementById("opções").value="Dólar Canadense"){
-				document.getElementById("valorFinal").innerHTML = (valor/dolarCanada).toFixed(2);			
-				
-			}
-			
-			if(document.getElementById("opções").value="Dólar Australiano"){
-				document.getElementById("valorFinal").innerHTML = (valor/dolarAustraliano).toFixed(2);			
-				
-			}
-						
-		}
-		
-		
-	</script>
+				<br><br><br><br>
+					
+					<input type="radio" name="nmMoeda2" id="idReal2" step="0.01" checked>
+					<label for="idReal2">Real</label><br>
+	  
+					<input type="radio" name="nmMoeda2" id="idDolarA2" step="0.01">
+					<label for="idDolarA2">Dolar Americano</label><br>
+	  
+					<input type="radio" name="nmMoeda2" id="idEuro2" step="0.01">
+					<label for="idEuro2">Euro</label><br>
+	  
+					<input type="radio" name="nmMoeda2" id="idLibra2" step="0.01">
+					<label for="idLibra2">Libra Esterlina</label><br>
+	  
+					<input type="radio" name="nmMoeda2" id="idDolarC2" step="0.01">
+					<label for="idDolarC2">Dólar Canadense</label><br>
+	  
+				  <br><br>
+				  <button type="button" onclick="converter()">Converter</button>
+				  <br><br>
+	  
+				  <output id="idOut"></output>
+	  
+				  <script>
+					function converter(Moedas) {
+					  let out= document.getElementById("idOut")
+					  let cont = " "
+	  
+					 
+	  
+					
+						if (document.getElementById('idReal1').checked && document.getElementById('idReal2').checked ) {
+						  cont = cont
+						  out.value = + cont
+					  }
+					  if (document.getElementById('idReal1').checked && document.getElementById('idDolarA2').checked ) {
+						cont = 0.21
+						out.value = + cont
+					  }  if (document.getElementById('idReal1').checked && document.getElementById('idEuro2').checked ) {
+						cont = 0.20
+						out.value = + cont
+					  }
+					  if (document.getElementById('idReal1').checked && document.getElementById('idLibra2').checked ) {
+						cont = 0.17
+						out.value = + cont
+					  }
+					   else if (document.getElementById('idReal1').checked && document.getElementById('idDolarC2').checked ) {
+						cont = 0.27
+						out.value = + cont
+					   } 
+	  
+						  
+						  if (document.getElementById('idDolarA1').checked && document.getElementById('idReal2').checked ) {
+							cont = 4.73
+							out.value = + cont
+						  }  
+							if (document.getElementById('idDolarA1').checked && document.getElementById('idDolarA2').checked ) {
+							  cont = cont
+							  out.value = + cont
+						  } 
+							if (document.getElementById('idDolarA1').checked && document.getElementById('idEuro2').checked ) {
+							  cont = 0.93
+							  out.value = + cont
+						  }
+							if (document.getElementById('idDolarA1').checked && document.getElementById('idLibra2').checked ) {
+							  cont = 0.79
+							  out.value = + cont
+						  }
+							else if (document.getElementById('idDolarA1').checked && document.getElementById('idDolarC2').checked ) {
+							  cont = 1.27
+							  out.value = + cont
+						  } 
+	  
+							
+							  if (document.getElementById('idEuro1').checked && document.getElementById('idReal2').checked ) {
+								cont = 5.08
+								out.value = + cont
+							}  
+							  if (document.getElementById('idEuro1').checked && document.getElementById('idDolarA2').checked ) {
+								cont = 1.07
+								out.value = + cont
+							}  
+							  if (document.getElementById('idEuro1').checked && document.getElementById('idEuro2').checked ) {
+								cont = cont
+								out.value = + cont
+							}
+							  if (document.getElementById('idEuro1').checked && document.getElementById('idLibra2').checked ) {
+								cont = 0.85
+								out.value = + cont
+							}
+							  else if (document.getElementById('idEuro1').checked && document.getElementById('idDolarC2').checked ) {
+								cont = 1.37
+								out.value = + cont
+							} 
+								
+								if (document.getElementById('idLibra1').checked && document.getElementById('idReal2').checked ) {
+									cont = 5.97
+									out.value = + cont
+								}  
+								  if (document.getElementById('idLibra1').checked && document.getElementById('idDolarA2').checked ) {
+									cont = 1.26
+									out.value = + cont
+								} 
+								  if (document.getElementById('idLibra1').checked && document.getElementById('idLibra2').checked ) {
+									cont = cont
+									out.value = + cont
+								}
+								
+								  if (document.getElementById('idLibra1').checked && document.getElementById('idEuro2').checked ) {
+									cont = 1.18
+									out.value = + cont
+								}
+								  else if (document.getElementById('idLibra1').checked && document.getElementById('idDolarC2').checked ) {
+									cont = 1.61
+									out.value = + cont
+								} 
+								  
+									if (document.getElementById('idDolarC1').checked && document.getElementById('idReal2').checked ) {
+									  cont = 3.72
+									  out.value = + cont
+								  }  
+									if (document.getElementById('idDolarC1').checked && document.getElementById('idDolarA2').checked ) {
+									  cont = 0.79
+									  out.value = + cont
+								  }
+									if (document.getElementById('idDolarC1').checked && document.getElementById('idEuro2').checked ) {
+									  cont = 0.73
+									  out.value = + cont
+								  }
+									else if (document.getElementById('idDolarC1').checked && document.getElementById('idLibra2').checked ) {
+									  cont = 0.62
+									  out.value = + cont
+								  } 
+									else if (document.getElementById('idDolarC1').checked && document.getElementById('idDolarC2').checked ) {
+									  cont = cont
+									  out.value = + cont
+								  } 
+					   
+	  
+					   
+					  
+					}
+	  
+	  
+				  </script>
 
     </body>
 </html>
